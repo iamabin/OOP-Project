@@ -28,6 +28,7 @@ sudo apt update
 
 sudo apt-get -y install build-essential curl unzip tar pkg-config cmake python3-pip gdb
 
+pip3 install --upgrade setuptools
 pip3 install conan
 
 #start build test
