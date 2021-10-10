@@ -28,7 +28,7 @@ sudo apt update
 
 sudo apt-get -y install build-essential curl unzip tar pkg-config cmake gdb
 
-sudo pip install conan
+pip3 install conan
 
 #start build test
 cd $CURRENT_DIR
