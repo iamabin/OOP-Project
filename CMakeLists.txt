@@ -89,7 +89,6 @@ conan_cmake_run(REQUIRES
 
 #        openssl/1.0.2u
         mariadb-connector-c/3.1.12
-        zlib/1.2.8
         gtest/1.10.0
         sqlpp11/0.60
         libcurl/7.78.0
