@@ -84,37 +84,37 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/utils/sqlpp11-connector-mysql/installed/x64-osx/include)
 
-
 #link dependencies libraries
 conan_cmake_run(REQUIRES
 
-        openssl/1.0.2s
-        mysql-connector-c/6.1.11
+#        openssl/1.0.2u
+        mariadb-connector-c/3.1.12
         gtest/1.10.0
         sqlpp11/0.60
+        libcurl/7.78.0
 
         BASIC_SETUP CMAKE_TARGETS
         BUILD missing)
 
 target_link_libraries(GTestSelf
         CONAN_PKG::gtest
-        CONAN_PKG::openssl
-        CONAN_PKG::mysql-connector-c
+#        CONAN_PKG::openssl
+        CONAN_PKG::mariadb-connector-c
         CONAN_PKG::sqlpp11
         )
 
 
 target_link_libraries(GTestSelfInput
         CONAN_PKG::gtest
-        CONAN_PKG::openssl
-        CONAN_PKG::mysql-connector-c
+#        CONAN_PKG::openssl
+        CONAN_PKG::mariadb-connector-c
         CONAN_PKG::sqlpp11
         )
 
 target_link_libraries(MainSelf
         CONAN_PKG::gtest
-        CONAN_PKG::openssl
-        CONAN_PKG::mysql-connector-c
+#        CONAN_PKG::openssl
+        CONAN_PKG::mariadb-connector-c
         CONAN_PKG::sqlpp11
         )
 
