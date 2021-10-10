@@ -26,7 +26,7 @@ CURRENT_DIR=`pwd`
 #install system build dependency
 sudo apt update
 
-sudo apt-get -y install build-essential curl unzip tar pkg-config cmake gdb
+sudo apt-get -y install build-essential curl unzip tar pkg-config cmake python3-pip gdb
 
 pip3 install conan
 
