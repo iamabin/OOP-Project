@@ -6,7 +6,7 @@ Student management system
 ## Try it out by [docker](https://hub.docker.com/r/akide/oop-project):
 
 ```
-docker run --rm -it akide/oop-project
+docker run --rm -it akide/oop-project 
 ```
 
 
