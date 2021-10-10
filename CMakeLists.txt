@@ -74,8 +74,9 @@ add_executable(MainSelf ${main_cpp})
 
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
     message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
-    file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"
+    file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/v0.16.1/conan.cmake"
             "${CMAKE_BINARY_DIR}/conan.cmake"
+            EXPECTED_HASH SHA256=396e16d0f5eabdc6a14afddbcfff62a54a7ee75c6da23f32f7a31bc85db23484
             TLS_VERIFY ON)
 endif()
 
@@ -83,37 +84,37 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/utils/sqlpp11-connector-mysql/installed/x64-osx/include)
 
-
 #link dependencies libraries
 conan_cmake_run(REQUIRES
 
-        openssl/1.0.2u
-        mysql-connector-c/6.1.11
+#        openssl/1.0.2u
+        mariadb-connector-c/3.1.12
         gtest/1.10.0
         sqlpp11/0.60
+        libcurl/7.78.0
 
         BASIC_SETUP CMAKE_TARGETS
         BUILD missing)
 
 target_link_libraries(GTestSelf
         CONAN_PKG::gtest
-        CONAN_PKG::openssl
-        CONAN_PKG::mysql-connector-c
+#        CONAN_PKG::openssl
+        CONAN_PKG::mariadb-connector-c
         CONAN_PKG::sqlpp11
         )
 
 
 target_link_libraries(GTestSelfInput
         CONAN_PKG::gtest
-        CONAN_PKG::openssl
-        CONAN_PKG::mysql-connector-c
+#        CONAN_PKG::openssl
+        CONAN_PKG::mariadb-connector-c
         CONAN_PKG::sqlpp11
         )
 
 target_link_libraries(MainSelf
         CONAN_PKG::gtest
-        CONAN_PKG::openssl
-        CONAN_PKG::mysql-connector-c
+#        CONAN_PKG::openssl
+        CONAN_PKG::mariadb-connector-c
         CONAN_PKG::sqlpp11
         )
 
