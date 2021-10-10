@@ -88,7 +88,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/utils/sqlpp11-connector-mysql/in
 #link dependencies libraries
 conan_cmake_run(REQUIRES
 
-        openssl/1.0.2u
+        openssl/1.0.2s
         mysql-connector-c/6.1.11
         gtest/1.10.0
         sqlpp11/0.60
